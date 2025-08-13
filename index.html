@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftra.ai - Premium AI Domain for Sale</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #667eea 100%);
+            color: #333;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Floating particles background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+
+        .particle:nth-child(1) { width: 8px; height: 8px; left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { width: 12px; height: 12px; left: 20%; animation-delay: 2s; }
+        .particle:nth-child(3) { width: 6px; height: 6px; left: 30%; animation-delay: 4s; }
+        .particle:nth-child(4) { width: 10px; height: 10px; left: 40%; animation-delay: 6s; }
+        .particle:nth-child(5) { width: 14px; height: 14px; left: 50%; animation-delay: 8s; }
+        .particle:nth-child(6) { width: 8px; height: 8px; left: 60%; animation-delay: 10s; }
+        .particle:nth-child(7) { width: 12px; height: 12px; left: 70%; animation-delay: 12s; }
+        .particle:nth-child(8) { width: 6px; height: 6px; left: 80%; animation-delay: 14s; }
+        .particle:nth-child(9) { width: 10px; height: 10px; left: 90%; animation-delay: 16s; }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .lang-toggle {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .lang-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            margin-top: 80px;
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero-title {
+            font-size: 6rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: slideInUp 1s ease;
+            position: relative;
+        }
+
+        .hero-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            border-radius: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            animation: slideInUp 1s ease 0.2s both;
+        }
+
+        .hero-price {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 2rem;
+            animation: slideInUp 1s ease 0.4s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: slideInUp 1s ease 0.6s both;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section:nth-child(even) {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            border-radius: 2px;
+        }
+
+        .section-desc {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 234, 167, 0.1), rgba(250, 177, 160, 0.1));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 234, 167, 0.5);
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-desc {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Stats Section */
+        .stats-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 3rem 2rem;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-card {
+            padding: 1.5rem;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        /* Call to Action */
+        .cta-container {
+            background: linear-gradient(135deg, rgba(255, 234, 167, 0.2), rgba(250, 177, 160, 0.2));
+            border-radius: 30px;
+            padding: 4rem 3rem;
+            text-align: center;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 234, 167, 0.3);
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-desc {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            color: #333;
+            border-color: transparent;
+            box-shadow: 0 10px 30px rgba(255, 234, 167, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 234, 167, 0.4);
+            background: linear-gradient(135deg, #fab1a0, #ffeaa7);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border-color: white;
+            backdrop-filter: blur(20px);
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #333;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 3rem 0;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.2);
+            color: rgba(255, 255, 255, 0.7);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons,
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* English Layout */
+        .english {
+            direction: ltr;
+        }
+
+        .english .nav-content {
+            flex-direction: row;
+        }
+
+        @media (max-width: 768px) {
+            .english .nav-content {
+                flex-direction: column;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating particles -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="logo">Daftra.ai</div>
+            <button class="lang-toggle" onclick="toggleLanguage()">English</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Daftra.ai</h1>
+                <p class="hero-subtitle" id="hero-subtitle">دومين مميز للشركات الرقمية والذكاء الاصطناعي</p>
+                <div class="hero-price" id="hero-price">متاح للبيع</div>
+                <div class="hero-buttons">
+                    <a href="mailto:aidomainsforsale@gmail.com" class="btn btn-primary" id="hero-email">تواصل معنا</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title" id="features-title">لماذا Daftra.ai مميز؟</h2>
+                <p class="section-desc" id="features-desc">دومين استراتيجي يجمع بين القوة والأناقة في عالم التكنولوجيا</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">📚</span>
+                    <h3 class="feature-title" id="feature1-title">معنى قوي</h3>
+                    <p class="feature-desc" id="feature1-desc">"دفتر" كلمة عربية تعني السجل والكتاب - مثالي لتطبيقات إدارة البيانات والذكاء الاصطناعي</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">🎯</span>
+                    <h3 class="feature-title" id="feature2-title">سهل التذكر</h3>
+                    <p class="feature-desc" id="feature2-desc">6 أحرف بسيطة، نطق واضح في العربية والإنجليزية، مثالي للعلامات التجارية العالمية</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">🚀</span>
+                    <h3 class="feature-title" id="feature3-title">نطاق .ai متميز</h3>
+                    <p class="feature-desc" id="feature3-desc">النطاق الأكثر طلباً في عصر الذكاء الاصطناعي، يعطي مصداقية تقنية فورية</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">💼</span>
+                    <h3 class="feature-title" id="feature4-title">مثالي للأعمال</h3>
+                    <p class="feature-desc" id="feature4-desc">مناسب لشركات المحاسبة، إدارة البيانات، التطبيقات المالية، وحلول الذكاء الاصطناعي</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">🌍</span>
+                    <h3 class="feature-title" id="feature5-title">جاذبية عالمية</h3>
+                    <p class="feature-desc" id="feature5-desc">يجمع بين الأصالة العربية والطابع العالمي، مثالي للشركات التي تستهدف الأسواق المتعددة</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">📈</span>
+                    <h3 class="feature-title" id="feature6-title">استثمار ذكي</h3>
+                    <p class="feature-desc" id="feature6-desc">النطاقات القصيرة في .ai تتزايد قيمتها بسرعة مع نمو قطاع التكنولوجيا</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title" id="stats-title">إحصائيات مذهلة</h2>
+            </div>
+            
+            <div class="stats-container fade-in">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label" id="stat1">أحرف مثالية</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">.ai</div>
+                        <div class="stat-label" id="stat2">نطاق المستقبل</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label" id="stat3">إمكانيات لا محدودة</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">2025</div>
+                        <div class="stat-label" id="stat4">متاح الآن</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section">
+        <div class="container">
+            <div class="cta-container fade-in">
+                <h2 class="cta-title" id="cta-title">احصل على Daftra.ai اليوم</h2>
+                <p class="cta-desc" id="cta-desc">لا تفوت الفرصة لامتلاك هذا الدومين الاستثنائي الذي سيميز مشروعك في السوق</p>
+                <div class="cta-buttons">
+                    <a href="mailto:aidomainsforsale@gmail.com" class="btn btn-primary" id="cta-email">اشتري الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p id="footer-text">© 2025 Daftra.ai - دومين مميز متاح للبيع | تم التصميم بـ ❤️</p>
+        </div>
+    </footer>
+
+    <script>
+        let isEnglish = false;
+
+        const translations = {
+            ar: {
+                heroSubtitle: "دومين مميز للشركات الرقمية والذكاء الاصطناعي",
+                heroPrice: "متاح للبيع",
+                heroEmail: "تواصل معنا",
+                heroWhatsapp: "واتساب",
+                featuresTitle: "لماذا Daftra.ai مميز؟",
+                featuresDesc: "دومين استراتيجي يجمع بين القوة والأناقة في عالم التكنولوجيا",
+                feature1Title: "معنى قوي",
+                feature1Desc: '"دفتر" كلمة عربية تعني السجل والكتاب - مثالي لتطبيقات إدارة البيانات والذكاء الاصطناعي',
+                feature2Title: "سهل التذكر",
+                feature2Desc: "6 أحرف بسيطة، نطق واضح في العربية والإنجليزية، مثالي للعلامات التجارية العالمية",
+                feature3Title: "نطاق .ai متميز",
+                feature3Desc: "النطاق الأكثر طلباً في عصر الذكاء الاصطناعي، يعطي مصداقية تقنية فورية",
+                feature4Title: "مثالي للأعمال",
+                feature4Desc: "مناسب لشركات المحاسبة، إدارة البيانات، التطبيقات المالية، وحلول الذكاء الاصطناعي",
+                feature5Title: "جاذبية عالمية",
+                feature5Desc: "يجمع بين الأصالة العربية والطابع العالمي، مثالي للشركات التي تستهدف الأسواق المتعددة",
+                feature6Title: "استثمار ذكي",
+                feature6Desc: "النطاقات القصيرة في .ai تتزايد قيمتها بسرعة مع نمو قطاع التكنولوجيا",
+                statsTitle: "إحصائيات مذهلة",
+                stat1: "أحرف مثالية",
+                stat2: "نطاق المستقبل",
+                stat3: "إمكانيات لا محدودة",
+                stat4: "متاح الآن",
+                ctaTitle: "احصل على Daftra.ai اليوم",
+                ctaDesc: "لا تفوت الفرصة لامتلاك هذا الدومين الاستثنائي الذي سيميز مشروعك في السوق",
+                ctaEmail: "اشتري الآن",
+                ctaWhatsapp: "استفسر عن السعر",
+                footerText: "© 2025 Daftra.ai - دومين مميز متاح للبيع | تم التصميم بـ ❤️"
+            },
+            en: {
+                heroSubtitle: "Premium Domain for Digital Companies & AI Solutions",
+                heroPrice: "Available for Sale",
+                heroEmail: "Contact Us",
+                heroWhatsapp: "WhatsApp",
+                featuresTitle: "Why Daftra.ai is Special?",
+                featuresDesc: "A strategic domain that combines power and elegance in the tech world",
+                feature1Title: "Powerful Meaning",
+                feature1Desc: '"Daftar" means ledger/book in Arabic - perfect for data management and AI applications',
+                feature2Title: "Easy to Remember",
+                feature2Desc: "6 simple letters, clear pronunciation in Arabic and English, perfect for global brands",
+                feature3Title: "Premium .ai Domain",
+                feature3Desc: "Most sought-after extension in the AI era, provides instant tech credibility",
+                feature4Title: "Business Perfect",
+                feature4Desc: "Ideal for accounting firms, data management, financial apps, and AI solutions",
+                feature5Title: "Global Appeal",
+                feature5Desc: "Combines Arabic authenticity with global character, perfect for multi-market companies",
+                feature6Title: "Smart Investment",
+                feature6Desc: "Short .ai domains rapidly increase in value with technology sector growth",
+                statsTitle: "Amazing Statistics",
+                stat1: "Perfect Letters",
+                stat2: "Future Domain",
+                stat3: "Unlimited Potential",
+                stat4: "Available Now",
+                ctaTitle: "Get Daftra.ai Today",
+                ctaDesc: "Don't miss the opportunity to own this exceptional domain that will distinguish your project in the market",
+                ctaEmail: "Buy Now",
+                ctaWhatsapp: "Inquire About Price",
+                footerText: "© 2025 Daftra.ai - Premium Domain Available for Sale | Designed with ❤️"
+            }
+        };
+
+        function toggleLanguage() {
+            const body = document.body;
+            const html = document.documentElement;
+            const button = document.querySelector('.lang-toggle');
+            
+            isEnglish = !isEnglish;
+            
+            if (isEnglish) {
+                html.setAttribute('lang', 'en');
+                html.setAttribute('dir', 'ltr');
+                body.classList.add('english');
+                button.textContent = 'العربية';
+                
+                // Update all text content
+                Object.keys(translations.en).forEach(key => {
+                    const element = document.getElementById(key.replace(/([A-Z])/g, '-$1').toLowerCase().replace(/^-/, ''));
+                    if (element) {
+                        element.textContent = translations.en[key];
+                    }
+                });
+                
+            } else {
+                html.setAttribute('lang', 'ar');
+                html.setAttribute('dir', 'rtl');
+                body.classList.remove('english');
+                button.textContent = 'English';
+                
+                // Update all text content
+                Object.keys(translations.ar).forEach(key => {
+                    const element = document.getElementById(key.replace(/([A-Z])/g, '-$1').toLowerCase().replace(/^-/, ''));
+                    if (element) {
+                        element.textContent = translations.ar[key];
+                    }
+                });
+            }
+        }
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth navbar transition
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                nav.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // Parallax effect for particles
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const particles = document.querySelectorAll('.particle');
+            particles.forEach((particle, index) => {
+                const speed = (index + 1) * 0.5;
+                particle.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Add click animation to buttons
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                let ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+                
+                let x = e.clientX - e.target.offsetLeft;
+                let y = e.clientY - e.target.offsetTop;
+                
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+    </script>
+
+    <style>
+        /* Ripple effect for buttons */
+        .btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
+</body>
+</html>
